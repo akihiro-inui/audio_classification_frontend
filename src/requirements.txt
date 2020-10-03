@@ -1,0 +1,6 @@
+tensorflow
+keras
+pyaudio
+scikit-learn
+librosa
+matplotlib
