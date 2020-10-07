@@ -1,7 +1,3 @@
-class DataPipelineException(Exception):
-    pass
-
-
 class ConfigException(Exception):
     pass
 

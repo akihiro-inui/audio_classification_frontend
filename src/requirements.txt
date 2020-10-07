@@ -4,3 +4,4 @@ pyaudio
 scikit-learn
 librosa
 matplotlib
+flask

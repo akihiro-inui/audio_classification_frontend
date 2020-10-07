@@ -1,6 +1,6 @@
-from src.utils.config_reader import ConfigReader
-from src.feature.mel_spectrogram import MelSpectrogram
-from src.utils.custom_error_handler import FeatureExtractionException
+from src.backend.utils.config_reader import ConfigReader
+from src.backend.feature.mel_spectrogram import MelSpectrogram
+from src.backend.utils.custom_error_handler import FeatureExtractionException
 
 
 class FeatureSelector:

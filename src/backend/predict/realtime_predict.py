@@ -1,14 +1,14 @@
 import os
 import sys
 sys.path.insert(0, os.getcwd())
-import time
 import pyaudio
 import numpy as np
-from src.model import load_model
-from src.audio import select_mic
-from src.utils.config_reader import ConfigReader
-from src.utils.file import read_json_file
-from src.feature.feature_selector import FeatureSelector
+import time
+from src.backend.predict.model import load_model
+from src.backend.utils.audio import select_mic
+from src.backend.utils.config_reader import ConfigReader
+from src.backend.utils.file import read_json_file
+from src.backend.feature.feature_selector import FeatureSelector
 
 
 class StreamerException(Exception):
@@ -57,6 +57,7 @@ class AudioStreamer:
         # Run audio streamer
         while True:
             streamer.start_stream()
+            time.sleep(0.1)
 
     def stop_streamer(self, streamer):
         """
@@ -64,7 +65,7 @@ class AudioStreamer:
         :param streamer: Pyaudio Streamer class
         """
         # Run audio streamer
-        stop_streamer.stop_stream()
+        streamer.stop_stream()
 
     def predictor(self, input_data, frame_count, time_info, status_flags):
         """

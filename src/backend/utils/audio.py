@@ -1,11 +1,5 @@
-import numpy as np
 import pyaudio
 import argparse
-import librosa
-import librosa.display
-import matplotlib.pyplot as plt
-from src.utils.config_reader import ConfigReader
-from src.feature.mel_spectrogram import MelSpectrogram
 
 
 def get_available_mics() -> dict:

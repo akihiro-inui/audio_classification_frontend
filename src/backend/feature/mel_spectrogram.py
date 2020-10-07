@@ -2,9 +2,9 @@ import numpy as np
 import librosa
 import librosa.display
 import matplotlib.pyplot as plt
-from src.utils.config_reader import ConfigReader
-from src.feature.base import BaseFeature
-from src.utils.custom_error_handler import FeatureExtractionException
+from src.backend.utils.config_reader import ConfigReader
+from src.backend.feature.base import BaseFeature
+from src.backend.utils.custom_error_handler import FeatureExtractionException
 
 
 class MelSpectrogram(BaseFeature):
@@ -47,7 +47,7 @@ class MelSpectrogram(BaseFeature):
                                          fmax=self.cfg.sample_rate,
                                          x_axis='time')
                 plt.colorbar(format='%+2.0f dB')
-                plt.show()
+                plt.savefig('src/frontend/assets/image.png')
             return mel_spectrogram
         except Exception as err:
             raise FeatureExtractionException(f"Error while extracting Mel-spectrogram: {err}")
